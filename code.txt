@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSS Animations</title>
+    <style>
+      .back {
+        background-image: url(images/ground.jpg);
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .road {
+        background-image: url(images/track.jpg);
+        height: 20vh;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      .plane {
+        width: 500px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 3%;
+        margin-right: -20%;
+        animation: planeMove 8s linear infinite;
+      }
+      @keyframes planeMove {
+        0% {
+          transform: translateX(0px) translateY(0px) rotate(0deg);
+        }
+        15% {
+          transform: translateX(-500px) translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateX(-1500px) translateY(-200px) rotate(20deg);
+        }
+        51% {
+          transform: translateX(-1500px) translateY(2000px) rotate(20deg);
+        }
+        52% {
+          transform: translateX(100px) translateY(0px) rotate(2deg);
+        }
+        60% {
+          transform: translateX(0px) translateY(0px) rotate(0deg);
+        }
+      }
+      @keyframes logoMove {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes logoMove2 {
+        0% {
+          color: red;
+        }
+        10% {
+          color: rgb(4, 0, 255);
+        }
+        20% {
+          color: rgb(0, 255, 149);
+        }
+        30% {
+          color: rgb(0, 122, 71);
+        }
+        40% {
+          color: rgb(255, 153, 0);
+        }
+        50% {
+          color: rgb(255, 0, 157);
+        }
+        60% {
+          color: rgb(255, 0, 106);
+        }
+        70% {
+          color: rgb(255, 0, 0);
+        }
+        80% {
+          color: rgb(0, 217, 255);
+        }
+        90% {
+          color: rgb(255, 251, 0);
+        }
+      }
+
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #logo {
+        right: 0;
+        margin: 2%;
+        font-family: "Anton", sans-serif;
+      }
+      #logoText1 {
+        text-align: right;
+        font-size: 40px;
+        font-weight: bold;
+        animation: logoMove2 5s linear infinite;
+      }
+      #logoText2 {
+        text-align: right;
+        font-size: 25px;
+        font-weight: bold;
+        animation: logoMove 4s linear infinite;
+      }
+      #btn {
+        text-align: right;
+        right: 0;
+      }
+
+      a {
+        padding: 1px 10px;
+        margin-top: 20px;
+        border-color: blue;
+        background-color: blue;
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="back">
+      <div class="road"></div>
+      <div id="logo">
+        <p id="logoText1">Sri Lankan</p>
+        <p id="logoText2">Air - LIne</p>
+        <div id="btn">
+          <a href="/code.txt">view source code</a>
+        </div>
+      </div>
+      <img src="images/plane.png" class="plane" alt="plane is here" />
+    </div>
+  </body>
+</html>
